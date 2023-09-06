@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   }
   topichasError = true
   validatetopic(value: any) {
-    if (value === true) {
+    if (value == true) {
       this.topichasError = true
     } else {
       this.topichasError = false
