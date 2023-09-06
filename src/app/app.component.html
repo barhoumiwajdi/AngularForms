@@ -12,21 +12,21 @@
     <h2 class="text-center text-success">FivePoins Bootcamp Enrollement Form</h2>
     <div class="col-10">
       <form action="" #userform="ngForm">
-        <!--  {{userform.value |json}}
+        {{userform.value |json}}
         <hr>
-        {{userModel |json}}-->
-        <!--<div class="mb-3 form-group">
-          <label for="Name" class="form-label">Name </label>
-          <input type="text" required #name="ngModel" class="form-control" id="Name" name="name" placeholder="name"
-            [(ngModel)]="userModel.name">
-        </div>
-        {{name.valid}}-->
+        {{userModel |json}}
         <div class="mb-3 form-group">
           <label for="Name" class="form-label">Name </label>
-          <input type="text" required #name class="form-control" id="Name" name="name" placeholder="name"
-            [(ngModel)]="userModel.name">
+          <input type="text" [class.is-invalid]="name.invalid && name.touched" required #name="ngModel"
+            class="form-control" id="Name" name="name" placeholder="name" [(ngModel)]="userModel.name">
         </div>
-        {{name.className}}
+        <!--  {{name.valid}}
+        <div class="mb-3 form-group">
+          <label for="Name" class="form-label">Name </label>
+          <input type="text" [class.is-invalid]="name.invalid" required #name class="form-control  " id="Name"
+            name="name" placeholder="name" [(ngModel)]="userModel.name">
+        </div>
+        {{name.className}}-->
         <div class="mb-3 form-group">
           <label for="exampleFormControlInput1" class="form-label">Email address</label>
           <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
@@ -34,8 +34,8 @@
         </div>
         <div class="mb-3 form-group">
           <label for="tel" class="form-label">phone</label>
-          <input type="tel" class="form-control" name="phone" id="tel" placeholder="+21620967397"
-            [ngModel]="userModel.tel">
+          <input type="tel" [class.is-invalid]="phone.invalid && phone.touched" #phone="ngModel" pattern="^\d{10}$"
+            class="form-control" name="phone" id="tel" placeholder="+21620967397" [ngModel]="userModel.tel">
         </div>
         <div class="form-group mb-3">
           <label for="topics" class="form-label">Topics </label>
