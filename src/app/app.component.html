@@ -48,9 +48,13 @@
         </div>
         <div class="form-group mb-3">
           <label for="topics" class="form-label">Topics </label>
-          <select class="form-select" aria-label="Default select example" ngModel name="topics">
+          <select (blur)="validatetopic(topic.value)" (change)='validatetopic(topic.value)' required #topic="ngModel"
+            [class.is-invalid]="topichasError && topic.touched" class="form-select" aria-label="Default select example"
+            ngModel name="topics">
+            <option value="default">Im not interessted on</option>
             <option *ngFor="let topic of Topics">{{topic}}</option>
           </select>
+          <small class="text-danger" [class.d-none]="!topichasError || topic.untouched">Please choose a option</small>
         </div>
         <div class="form-group">
           <label for="topics" class="form-label">Time Préfernce </label>

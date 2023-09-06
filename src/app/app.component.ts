@@ -15,5 +15,15 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
   }
-  userModel = new User('wajdi', 'wajdi@gmail.com', 20967397, '', 'morning', true)
+  topichasError = true
+  validatetopic(value: any) {
+    if (value === true) {
+      this.topichasError = true
+    } else {
+      this.topichasError = false
+
+    }
+
+  }
+  userModel = new User('wajdi', 'wajdi@gmail.com', 20967397, 'default', 'morning', true)
 }
