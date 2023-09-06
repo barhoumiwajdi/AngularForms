@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  userform = {}
+
   title = 'AngularForms';
 
 
   Topics = ['react', 'vue', 'angular']
   ngOnInit() {
   }
-
+  userModel = new User('wajdi', 'wajdi@gmail.com', 20967397, '', 'morning', true)
 }

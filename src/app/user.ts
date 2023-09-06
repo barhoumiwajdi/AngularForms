@@ -4,7 +4,7 @@ export class User {
         public email: string,
         public tel: number,
         public topics: string,
-        public radioo: string,
+        public timing: string,
         public subscribe: boolean
     ) { }
 }

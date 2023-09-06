@@ -13,18 +13,21 @@
     <div class="col-10">
       <form action="" #userform="ngForm">
         {{userform.value |json}}
+        <hr>
+        {{userModel |json}}
         <div class="mb-3 form-group">
           <label for="Name" class="form-label">Name </label>
-          <input type="text" class="form-control" id="Name" name="name" placeholder="name" ngModel>
+          <input type="text" class="form-control" id="Name" name="name" placeholder="name" [(ngModel)]="userModel.name">
         </div>
         <div class="mb-3 form-group">
           <label for="exampleFormControlInput1" class="form-label">Email address</label>
           <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-            placeholder="name@example.com" ngModel>
+            placeholder="name@example.com" [ngModel]="userModel.email">
         </div>
         <div class="mb-3 form-group">
           <label for="tel" class="form-label">phone</label>
-          <input type="tel" class="form-control" name="phone" id="tel" placeholder="+21620967397" ngModel>
+          <input type="tel" class="form-control" name="phone" id="tel" placeholder="+21620967397"
+            [ngModel]="userModel.tel">
         </div>
         <div class="form-group mb-3">
           <label for="topics" class="form-label">Topics </label>
@@ -36,13 +39,13 @@
           <label for="topics" class="form-label">Time Préfernce </label>
 
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="timing" ngModel>
+            <input class="form-check-input" type="checkbox" value="Morning" id="flexCheckDefault" name="timing" ngModel>
             <label class="form-check-label" for="flexCheckDefault">
               Morning
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="timing" checked
+            <input class="form-check-input" type="checkbox" value="Evening" id="flexCheckChecked" name="timing" checked
               ngModel>
             <label class="form-check-label" for="flexCheckChecked">
               Evening
