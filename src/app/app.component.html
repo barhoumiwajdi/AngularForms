@@ -15,12 +15,18 @@
         <!--  {{userform.value |json}}
         <hr>
         {{userModel |json}}-->
-        <div class="mb-3 form-group">
+        <!--<div class="mb-3 form-group">
           <label for="Name" class="form-label">Name </label>
           <input type="text" required #name="ngModel" class="form-control" id="Name" name="name" placeholder="name"
             [(ngModel)]="userModel.name">
         </div>
-        {{name.pristine}}
+        {{name.valid}}-->
+        <div class="mb-3 form-group">
+          <label for="Name" class="form-label">Name </label>
+          <input type="text" required #name class="form-control" id="Name" name="name" placeholder="name"
+            [(ngModel)]="userModel.name">
+        </div>
+        {{name.className}}
         <div class="mb-3 form-group">
           <label for="exampleFormControlInput1" class="form-label">Email address</label>
           <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
