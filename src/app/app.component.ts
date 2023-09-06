@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   Topics = ['react', 'vue', 'angular']
   ngOnInit() {
+
   }
   userModel = new User('wajdi', 'wajdi@gmail.com', 20967397, '', 'morning', true)
 }

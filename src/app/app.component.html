@@ -12,13 +12,15 @@
     <h2 class="text-center text-success">FivePoins Bootcamp Enrollement Form</h2>
     <div class="col-10">
       <form action="" #userform="ngForm">
-        {{userform.value |json}}
+        <!--  {{userform.value |json}}
         <hr>
-        {{userModel |json}}
+        {{userModel |json}}-->
         <div class="mb-3 form-group">
           <label for="Name" class="form-label">Name </label>
-          <input type="text" class="form-control" id="Name" name="name" placeholder="name" [(ngModel)]="userModel.name">
+          <input type="text" required #name="ngModel" class="form-control" id="Name" name="name" placeholder="name"
+            [(ngModel)]="userModel.name">
         </div>
+        {{name.pristine}}
         <div class="mb-3 form-group">
           <label for="exampleFormControlInput1" class="form-label">Email address</label>
           <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
