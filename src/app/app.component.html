@@ -11,7 +11,7 @@
   <div class="row d-flex justify-content-center">
     <h2 class="text-center text-success">FivePoins Bootcamp Enrollement Form</h2>
     <div class="col-10">
-      <form action="" #userform="ngForm">
+      <form action="" #userform="ngForm" (ngSubmit)="onSubmit()" novalidate>
         {{userform.form.valid}}
         <hr>
         {{userModel |json}}
@@ -90,7 +90,7 @@
             </label>
           </div>
         </div>
-        <div ngModelGroup="adresse">
+        <!-- <div ngModelGroup="adresse">
           <div class="form-group">
             <label for="pays" class="form-label">pays </label>
             <input type="text" class="form-control" id="pays" name="pays" placeholder="pays" ngModel>
@@ -103,9 +103,10 @@
             <label for="Name" class="form-label">Code Postale </label>
             <input type="text" class="form-control" id="codepostale" name="codepostale" placeholder="Code Postale"
               ngModel>
-          </div>
-        </div>
-        <button [disabled]="userform.form.invalid" type="button" class="btn btn-primary w-100">Submit</button>
+          </div> 
+        </div>-->
+        <button [disabled]="userform.form.invalid" (click)="onSubmit()" type="button"
+          class="btn btn-primary w-100">Submit</button>
       </form>
     </div>
   </div>
